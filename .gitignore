@@ -22,11 +22,11 @@ target/*
 /*/target/*
 
 .classpath
-
+.idea/*
 .project
-
 .settings/*
 /*/.settings/*
+*.iml
 ./*.iml
 ./*/*.iml
 /target/

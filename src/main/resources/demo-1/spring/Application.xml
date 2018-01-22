@@ -16,14 +16,10 @@
 		default-autowire="byName" default-lazy-init="false">
 	<!-- 采用注释的方式配置bean -->
 	<context:annotation-config />
-
 	<!-- 配置要扫描的包 -->
-	<context:component-scan base-package="org.vincent" />  
-
+	<context:component-scan base-package="org.vincent" />
   	<!-- 配置spring-batch  -->
   	<import resource="Spring-batch.xml"/>
-     
-	
 </beans>
     
     
