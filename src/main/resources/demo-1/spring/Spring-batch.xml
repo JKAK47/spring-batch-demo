@@ -14,8 +14,6 @@
     <bean id="jobLauncher" class="org.springframework.batch.core.launch.support.SimpleJobLauncher" >
         <property name="jobRepository" ref="jobRepository"/>
     </bean>
-
-
     <bean id="transactionManager"
           class="org.springframework.batch.support.transaction.ResourcelessTransactionManager"/>
     <!--
@@ -35,11 +33,10 @@
             <batch:tasklet ref="world" transaction-manager="transactionManager"></batch:tasklet>
         </batch:step>
     </batch:job>
-
+    <!-- TaskLet -->
     <bean id="hello" class="org.vincent.helloworld01.helloworldTaskLet">
         <property name="Msg" value="Hello "></property>
     </bean>
-
     <bean id="world" class="org.vincent.helloworld01.helloworldTaskLet">
         <property name="Msg" value=" World!"></property>
     </bean>

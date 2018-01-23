@@ -7,7 +7,7 @@ import org.springframework.batch.repeat.RepeatStatus;
 
 /**
  * @Package: org.vincent <br/>
- * @Description： TODO <br/>
+ * @Description： 本实例没有配置ItemReader、ItemProcessor和ItemWriter，而是直接在Step中调用 Tasklet，由Tasklet完成”Hello World!”的输出。 <br/>
  * @author: PengRong <br/>
  * @Date: Created in 2018/1/23 0:07 <br/>
  * @Company: PLCC <br/>

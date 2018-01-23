@@ -1,4 +1,4 @@
-package org.vincent.helloworld01;
+package org.vincent.csv;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobParameters;
@@ -13,21 +13,19 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 /**
  * Spring配置的方式取得JobLauncher和Job对象，然后由JobLauncher的run方法启动job，
  * 参数JobParameters是标志job的一些参数，处理结束后，控制台输出处理结果。
- *
+ *http://www.mkyong.com/spring-batch/spring-batch-multiresourceitemreader-example/
  * @author PengRong
  */
 public class JobLaunchTest {
 		public static void main(String[] args) throws Exception {
 				@SuppressWarnings("resource")
-				ApplicationContext context = new ClassPathXmlApplicationContext("demo-1/spring/Application.xml");
+				ApplicationContext context = new ClassPathXmlApplicationContext("demo-2/spring/Application.xml");
 				//获取到 jobLauncher
 				JobLauncher launcher = (JobLauncher) context.getBean("jobLauncher");
 				// 获取到 Job
-				Job job = (Job) context.getBean("helloWorldJob");
+				Job job = (Job) context.getBean("csvjob");
 				try {
-						System.out.println("start launcher");
 						launcher.run(job, new JobParameters());
-						System.out.println("stop launcher");
 				} catch (JobExecutionAlreadyRunningException | JobRestartException | JobInstanceAlreadyCompleteException
 								| JobParametersInvalidException e) {
 						e.printStackTrace();
