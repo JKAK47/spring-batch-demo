@@ -20,7 +20,7 @@ target/*
 # 子模块的target目录
 
 /*/target/*
-
+demo-*/*
 .classpath
 .idea/*
 .project
