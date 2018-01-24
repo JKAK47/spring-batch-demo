@@ -19,7 +19,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class JobLaunchTest {
 		public static void main(String[] args) throws Exception {
 				@SuppressWarnings("resource")
-				ApplicationContext context = new ClassPathXmlApplicationContext("demo-2/spring/Application.xml");
+				ApplicationContext context = new ClassPathXmlApplicationContext("demo-csv/spring/Application.xml");
 				//获取到 jobLauncher
 				JobLauncher launcher = (JobLauncher) context.getBean("jobLauncher");
 				// 获取到 Job
