@@ -27,10 +27,17 @@
     <!-- helloworld01 开始配置 -->
     <batch:job id="helloWorldJob">
         <batch:step id="step_hello" next="step_world">
-            <batch:tasklet ref="hello" transaction-manager="transactionManager"></batch:tasklet>
+        <!-- 
+        a、ref指定应用的bean
+		b、transaction-manager事物管理器
+		c、start-limit Step能够重启的最大次数
+		d、allow-start-if-complete如果tasklet成功完成之后，是否可以进行重试retry操作。
+         -->
+            <batch:tasklet ref="hello" transaction-manager="transactionManager" throttle-limit="1" start-limit="1" 
+            allow-start-if-complete="false"/>
         </batch:step>
         <batch:step id="step_world">
-            <batch:tasklet ref="world" transaction-manager="transactionManager"></batch:tasklet>
+            <batch:tasklet ref="world" transaction-manager="transactionManager" ></batch:tasklet>
         </batch:step>
     </batch:job>
     <!-- TaskLet -->

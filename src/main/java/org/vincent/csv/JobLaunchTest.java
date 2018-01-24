@@ -18,6 +18,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class JobLaunchTest {
 		public static void main(String[] args) throws Exception {
+				System.out.println("batch start");
 				@SuppressWarnings("resource")
 				ApplicationContext context = new ClassPathXmlApplicationContext("demo-csv/spring/Application.xml");
 				//获取到 jobLauncher
@@ -31,7 +32,7 @@ public class JobLaunchTest {
 						e.printStackTrace();
 						throw new Exception(e.getMessage(), e);
 				}
-				System.out.println("debug");
+				System.out.println("batch stop");
 		}
 
 }
