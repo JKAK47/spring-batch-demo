@@ -23,19 +23,20 @@
      -->
     <bean id="taskExecutor" class="org.springframework.core.task.SimpleAsyncTaskExecutor"/>
     <!-- csv  开始配置
-        csvjob 包含一个step，step包含csv完整的读写功能
+        csvjob 包含一个step，step包含csv完整的读写功能；包含读，处理，写三个完整处理操作。
+        commit-interval 标识提交间隔的个数，即每处理 10条进行写入操作。
     -->
     <batch:job id="csvjob">
         <batch:step id="csvStep">
             <batch:tasklet transaction-manager="transactionManager">
                 <batch:chunk reader="csvItemReader" writer="csvItemWriter" processor="csvItemProcessor"
-                             commit-interval="1">
+                             commit-interval="10">
                 </batch:chunk>
             </batch:tasklet>
         </batch:step>
     </batch:job>
     <!-- csv 结束配置 -->
-    <!-- csv ItemReader -->
+    <!-- csv ItemReader，读操作 -->
     <bean id="csvItemReader" class="org.springframework.batch.item.file.FlatFileItemReader" scope="step">
         <property name="resource" value="classpath:demo-csv/spring/inputFile.csv"/>
         <property name="lineMapper">
@@ -50,18 +51,22 @@
             </bean>
         </property>
     </bean>
-    <!-- lineTokenizer 配置csv文件分隔符以及表头 表队列名-->
+    <!-- lineTokenizer 配置csv文件分隔符以及文件每行数据对应的javaBean 对象对应的属性-->
     <bean id="lineTokenizer" class="org.springframework.batch.item.file.transform.DelimitedLineTokenizer">
         <property name="delimiter" value=","/>
         <property name="names" value="id,name,age,score"/>
     </bean>
+    <!-- 写操作。 -->
     <bean id="csvItemWriter" class="org.springframework.batch.item.file.FlatFileItemWriter" scope="step">
         <property name="resource" value="file:demo-csv/spring/outFile.csv"/>
+        <!-- 负责将数据根据规则写入到 目标文件中 -->
         <property name="lineAggregator">
             <bean class="org.springframework.batch.item.file.transform.DelimitedLineAggregator">
+            	<!-- 目标文件csv文件中字段域间分隔符 -->
                 <property name="delimiter" value=","/>
                 <property name="fieldExtractor">
                     <bean class="org.springframework.batch.item.file.transform.BeanWrapperFieldExtractor">
+                    	<!-- 规定Student JavaBean 属性和csv 每个字段域映射关系。 -->
                         <property name="names" value="name,age,score"/>
                     </bean>
                 </property>
