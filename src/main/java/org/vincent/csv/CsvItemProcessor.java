@@ -28,12 +28,13 @@ public class CsvItemProcessor implements ItemProcessor<Student, Student> {
 		 */
 		@Override
 		public Student process(Student student) throws Exception {
+				System.out.println(student);
         /* 合并ID和名字 */
-				student.setName(student.getId() + "--" + student.getName());
+				student.setName(student.getId() + "-" + student.getName());
         /* 年龄加2 */
-				student.setAge(String.valueOf(Integer.valueOf(student.getAge())+2));
+				student.setAge(student.getAge()+2);
         /* 分数加10 */
-				student.setScore(String.valueOf(Double.valueOf(student.getScore()) + 10));
+				student.setScore(student.getScore() + 10);
         /* 将处理后的结果传递给writer */
 				return student;
 		}

@@ -1,7 +1,5 @@
 package org.vincent.csv;
 
-import javax.annotation.Resource;
-
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,6 +13,7 @@ import org.springframework.batch.core.repository.JobExecutionAlreadyRunningExcep
 import org.springframework.batch.core.repository.JobInstanceAlreadyCompleteException;
 import org.springframework.batch.core.repository.JobRestartException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -30,7 +29,8 @@ public class CsvJobLaunchTest extends AbstractJUnit4SpringContextTests{
 
 	@Autowired
 	private JobLauncher joblauncher;
-	@Resource(name="csvjob")
+	@Autowired
+	@Qualifier("csvjob")
 	private Job job;
 	@Test
 	public void testCsvJob() throws JobExecutionAlreadyRunningException, JobRestartException, JobInstanceAlreadyCompleteException, JobParametersInvalidException {

@@ -17,8 +17,18 @@ import org.springframework.stereotype.Component;
 public class Student {
 		private  String id;
 		private  String name;
-		private  String age;
-		private  String score;
+		private  int age;
+		private  float score;
+
+		@Override
+		public String toString() {
+				return "Student{" +
+								"id='" + id + '\'' +
+								", name='" + name + '\'' +
+								", age='" + age + '\'' +
+								", score='" + score + '\'' +
+								'}';
+		}
 
 		public String getId() {
 				return id;
@@ -36,19 +46,19 @@ public class Student {
 				this.name = name;
 		}
 
-		public String getAge() {
+		public int getAge() {
 				return age;
 		}
 
-		public void setAge(String age) {
+		public void setAge(int age) {
 				this.age = age;
 		}
 
-		public String getScore() {
+		public float getScore() {
 				return score;
 		}
 
-		public void setScore(String score) {
+		public void setScore(float score) {
 				this.score = score;
 		}
 }

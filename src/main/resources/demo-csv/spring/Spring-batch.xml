@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:batch="http://www.springframework.org/schema/batch"
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:batch="http://www.springframework.org/schema/batch"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/batch
 		http://www.springframework.org/schema/batch/spring-batch.xsd
@@ -16,21 +17,16 @@
     </bean>
     <bean id="transactionManager"
           class="org.springframework.batch.support.transaction.ResourcelessTransactionManager"/>
-    <!--
-             公共组件：
-             1、多线程
-             2、
-     -->
     <bean id="taskExecutor" class="org.springframework.core.task.SimpleAsyncTaskExecutor"/>
-    <!-- csv  开始配置
+    <!-- csv  作业开始配置
         csvjob 包含一个step，step包含csv完整的读写功能；包含读，处理，写三个完整处理操作。
-        commit-interval 标识提交间隔的个数，即每处理 10条进行写入操作。
+        commit-interval 标识提交间隔的个数
     -->
     <batch:job id="csvjob">
         <batch:step id="csvStep">
             <batch:tasklet transaction-manager="transactionManager">
                 <batch:chunk reader="csvItemReader" writer="csvItemWriter" processor="csvItemProcessor"
-                             commit-interval="10">
+                             commit-interval="1"  >
                 </batch:chunk>
             </batch:tasklet>
         </batch:step>
@@ -41,6 +37,7 @@
         <property name="resource" value="classpath:demo-csv/spring/inputFile.csv"/>
         <property name="lineMapper">
             <bean class="org.springframework.batch.item.file.mapping.DefaultLineMapper">
+                <!--  lineTokenizer将文件的一行分解成一个 FieldSet，然后由 fieldSetMapper映射成POJO对象  -->
                 <property name="lineTokenizer" ref="lineTokenizer"/>
                 <!--读取csv文件一行数据后对应映射的javabean -->
                 <property name="fieldSetMapper">
@@ -54,6 +51,7 @@
     <!-- lineTokenizer 配置csv文件分隔符以及文件每行数据对应的javaBean 对象对应的属性-->
     <bean id="lineTokenizer" class="org.springframework.batch.item.file.transform.DelimitedLineTokenizer">
         <property name="delimiter" value=","/>
+        <!--  属性必须和 prototypeBeanName属性指定的POJO 类属性名一致。-->
         <property name="names" value="id,name,age,score"/>
     </bean>
     <!-- 写操作。 -->
