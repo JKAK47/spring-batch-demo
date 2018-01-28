@@ -13,6 +13,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring.version>4.3.2.RELEASE</spring.version>
+        <mysql.jdbc.driver.mysql.version>5.1.42</mysql.jdbc.driver.mysql.version>
     </properties>
 
     <dependencies>
@@ -89,12 +90,27 @@
             <artifactId>spring-core</artifactId>
             <version>${spring.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
         <!-- Spring  end-->
-        <!--  common dependency -->
+        <!--  common dependency start-->
         <dependency>
         	<groupId>commons-logging</groupId>
         	<artifactId>commons-logging</artifactId>
         	<version>1.2</version>
         </dependency>
+        <!--  common dependency  stop -->
+        <!-- mysql jdbc  start -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.jdbc.driver.mysql.version}</version>
+        </dependency>
+        <!-- mysql jdbc  start -->
+
+
     </dependencies>
 </project>
