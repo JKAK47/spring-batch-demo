@@ -21,6 +21,7 @@
     <!-- csv  作业开始配置
         csvjob 包含一个step，step包含csv完整的读写功能；包含读，处理，写三个完整处理操作。
         commit-interval 标识提交间隔的个数
+        sdf
     -->
     <batch:job id="csvjob">
         <batch:step id="csvStep">
