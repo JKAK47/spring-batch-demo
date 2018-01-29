@@ -35,7 +35,7 @@ public class CsvJobLaunchTest extends AbstractJUnit4SpringContextTests{
 	@Test
 	public void testCsvJob() throws JobExecutionAlreadyRunningException, JobRestartException, JobInstanceAlreadyCompleteException, JobParametersInvalidException {
 			JobParametersBuilder builder=new  JobParametersBuilder();
-			builder.addString("date","20180217");
+			builder.addString("date","20180218");
 			//job instance =job name+ job parameters ; 同样的参数是只要被同一个job执行完成了。就不能再次执行第二次了。
 		JobExecution execution =joblauncher.run(job, builder.toJobParameters());
 		System.out.println("Exit Status : " + execution.getStatus());
