@@ -14,6 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring.version>4.3.2.RELEASE</spring.version>
         <mysql.jdbc.driver.mysql.version>5.1.42</mysql.jdbc.driver.mysql.version>
+        <jdk.version>1.8</jdk.version>
     </properties>
 
     <dependencies>
@@ -95,6 +96,12 @@
             <artifactId>spring-jdbc</artifactId>
             <version>${spring.version}</version>
         </dependency>
+        <!-- Spring XML to/back object xml 解析 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-oxm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
         <!-- Spring  end-->
         <!--  common dependency start-->
         <dependency>
@@ -113,4 +120,18 @@
 
 
     </dependencies>
+    <build>
+    	<finalName>spring-batch-demo</finalName>
+    	<plugins>
+    		<plugin>
+    			<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
+				</configuration>
+    		</plugin>
+    	</plugins>
+    </build>
 </project>
