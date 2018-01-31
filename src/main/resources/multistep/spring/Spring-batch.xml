@@ -48,30 +48,31 @@
                 </batch:chunk>
             </batch:tasklet>
         </batch:step>
-       <batch:step id="step2"> <!--  next="step3" -->
+       <batch:step id="step2" next="step3"> <!--  next="step3" -->
         	<batch:tasklet  transaction-manager="transactionManager" task-executor="taskExecutor" throttle-limit="1">
         		 <batch:chunk reader="csvItemReaderb" writer="databaseItemWriter" processor="csvItemProcessor"
                              commit-interval="1">
                 </batch:chunk>
         	</batch:tasklet>
         </batch:step>
-	  <!--	 <batch:step id="step3" next="step4">
+	  	 <batch:step id="step3" next="step4"> <!--  next="step4" -->
         	<batch:tasklet  transaction-manager="transactionManager"  ref="fileDeletingTasklet"/>
         </batch:step>
-         <batch:step id="step4" next="step5">
+       <batch:step id="step4" >  <!-- 还没有实现  next="step5" -->
         	<batch:tasklet  transaction-manager="transactionManager">
         		 <batch:chunk reader="databaseItemReader" writer="xmlItemWriter" processor="csvItemProcessor"
                              commit-interval="1"  >
                 </batch:chunk>
         	</batch:tasklet>
         </batch:step>
-        <batch:step id="step5">
+        <!--  <batch:step id="step5">
         	<batch:tasklet  transaction-manager="transactionManager"  ref="sendingEmailTasklet" />
         </batch:step> -->
     </batch:job>
     <!-- csv 结束配置 -->
     <bean id="fileDeletingTasklet" class="org.vincent.mutlistep.FileDeletingTasklet">
-        <property name="directory" value="file:"/>
+    	<!-- 删除文件目录 -->
+        <property name="directory" value="file:multistep/spring/"/>
     </bean>
     <!-- csv ItemReader，读操作 -->
     <bean id="csvItemReader" class="org.springframework.batch.item.file.FlatFileItemReader" scope="step">

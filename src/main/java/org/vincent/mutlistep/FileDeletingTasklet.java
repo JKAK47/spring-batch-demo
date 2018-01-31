@@ -23,7 +23,7 @@ import org.springframework.util.Assert;
 
 public class FileDeletingTasklet implements Tasklet,InitializingBean{
 
-			private Resource directory;
+		private Resource directory;
 
 		public void setDirectory(Resource directory) {
 				this.directory = directory;
