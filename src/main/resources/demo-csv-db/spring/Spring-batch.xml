@@ -40,7 +40,7 @@
         csvjob 包含一个step，step包含csv完整的读写功能；包含读，处理，写三个完整处理操作。
         commit-interval 标识提交间隔的个数
     -->
-    <batch:job id="csvjob" >
+    <batch:job id="csvjob"  >
         <batch:step id="csvStep" >
             <batch:tasklet transaction-manager="transactionManager">
                 <batch:chunk reader="csvItemReader" writer="csvItemWriter" processor="csvItemProcessor"

@@ -14,27 +14,27 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @Modified By: <br/>
  *
  */
-//@XmlRootElement(name = "student")
+@XmlRootElement(name = "student")
 public class Student {
 		private int id;
 		private String name;
 		private int age;
 		private String address;
-		//@XmlAttribute(name = "id")
+		@XmlAttribute(name = "id")
 		public int getId() {
 				return id;
 		}
 		public void setId(int id) {
 				this.id = id;
 		}
-		//@XmlElement(name = "name")
+		@XmlElement(name = "name")
 		public String getName() {
 				return name;
 		}
 		public void setName(String name) {
 				this.name = name;
 		}
-		//@XmlElement(name = "age")
+		@XmlElement(name = "age")
 		public int getAge() {
 				return age;
 		}
@@ -42,7 +42,7 @@ public class Student {
 				this.age = age;
 		}
 
-		//@XmlElement(name = "address")
+		@XmlElement(name = "address")
 		public String getAddress() {
 				return address;
 		}
