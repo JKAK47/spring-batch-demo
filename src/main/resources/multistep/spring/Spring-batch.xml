@@ -50,7 +50,13 @@
         csvjob 包含一个step，step包含csv完整的读写功能；包含读，处理，写三个完整处理操作。
         commit-interval 标识提交间隔的个数
     -->
-    <batch:job id="mutltistepjob"  >
+    <batch:job id="mutltistepjob"  parent="jobAbstract">
+        <!-- 继承父类的Job监听器，job本身定义一个job监听器。 merge =true 表示继承父类监听器-->
+        <batch:listeners merge="true">
+            <batch:listener>
+                <bean class="org.vincent.mutlistep.listener.CustomJobExecutionListener"></bean>
+            </batch:listener>
+        </batch:listeners>
         <batch:step id="step1" next="step2"> <!--  next="step2" -->
             <batch:tasklet transaction-manager="transactionManager" task-executor="taskExecutor" throttle-limit="1">
                 <batch:chunk reader="csvItemReader" writer="csvItemWriter" processor="csvItemProcessor"
