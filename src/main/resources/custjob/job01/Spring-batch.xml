@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:batch="http://www.springframework.org/schema/batch"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/batch
+		http://www.springframework.org/schema/batch/spring-batch.xsd
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+    <!-- 内存缓存batch执行信息 -->
+   <!-- <bean id="jobRepository" class="org.springframework.batch.core.repository.support.MapJobRepositoryFactoryBean">
+        <property name="transactionManager" ref="transactionManager"/>
+        <property name="isolationLevelForCreate" value="ISOLATION_READ_COMMITTED"/>
+    </bean>-->
+     <!-- DB缓存batch执行信息 -->
+    <!-- <batch:job-repository id="jobRepository" data-source="dateSource" transaction-manager="transactionManager"
+    table-prefix="BATCH_" isolation-level-for-create="DEFAULT"/> -->
+    <bean id="jobRepository" class="org.springframework.batch.core.repository.support.JobRepositoryFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="isolationLevelForCreate" value="ISOLATION_READ_COMMITTED" />
+		<property name="databaseType" value="mysql" />
+        <property name="tablePrefix" value="BATCH_"/>
+        <property name="maxVarCharLength" value="3000"/>
+	</bean>
+    <!--  Spring Batch  job，jobrepo，trans 基本配置 -->
+    <bean id="jobLauncher" class="org.springframework.batch.core.launch.support.SimpleJobLauncher">
+        <property name="jobRepository" ref="jobRepository"/>
+       <!-- <property name="taskExecutor" value="taskExecutor"></property>-->
+    </bean>
+    <bean id="transactionManager"
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="${mysql.db.driverclass}"></property>
+        <property name="url" value="${mysql.db.url}"></property>
+        <property name="username" value="${mysql.db.username}"></property>
+        <property name="password" value="${mysql.db.password}"></property>
+    </bean>
+
+    <bean id="taskExecutor" class="org.springframework.core.task.SimpleAsyncTaskExecutor"/>
+    <batch:job id="jobAbstract" abstract="true">
+        <batch:listeners>
+            <batch:listener ref="sysoutListener"/>
+        </batch:listeners>
+        <!-- jobParameter参数校验 -->
+        <batch:validator ref="validator"/>
+    </batch:job>
+    <bean id="validator" class="org.vincent.mutlistep.SimpleJobParametersValidator"/>
+    <!-- job 执行前后监听器。 -->
+    <bean id="sysoutListener" class="org.vincent.mutlistep.listener.SystemOutJobExecutionListener"/>
+    <!-- csv  作业开始配置
+        csvjob 包含一个step，step包含csv完整的读写功能；包含读，处理，写三个完整处理操作。
+        commit-interval 标识提交间隔的个数
+    -->
+    <batch:job id="job01"  parent="jobAbstract" restartable="false">
+        <!-- 继承父类的Job监听器，job本身定义一个job监听器。 merge =true 表示继承父类监听器-->
+        <batch:listeners merge="true">
+            <batch:listener>
+                <bean class="org.vincent.mutlistep.listener.CustomJobExecutionListener"></bean>
+            </batch:listener>
+        </batch:listeners>
+        <batch:step id="step1" > <!--  next="step2" -->
+            <batch:tasklet transaction-manager="transactionManager" task-executor="taskExecutor" throttle-limit="1">
+                <batch:chunk reader="job01Reader" writer="job01Writer" processor="job01Processor"
+                             commit-interval="1">
+                </batch:chunk>
+            </batch:tasklet>
+        </batch:step>
+
+    </batch:job>
+    <!-- job 结束配置 -->
+
+</beans>
