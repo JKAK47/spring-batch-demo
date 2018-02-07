@@ -49,7 +49,7 @@ public class FileDeletingTasklet implements Tasklet,InitializingBean{
 		public RepeatStatus execute(StepContribution contribution, ChunkContext chunkContext) throws Exception {
 				File dir = directory.getFile();
 				Assert.state(dir.isDirectory());
-
+				
 				File[] files = dir.listFiles();
 				for (int i = 0; i < files.length; i++) {
 						boolean deleted = files[i].delete();
@@ -60,6 +60,7 @@ public class FileDeletingTasklet implements Tasklet,InitializingBean{
 								System.out.println(files[i].getPath() + " is deleted!");
 						}
 				}
+				
 				return RepeatStatus.FINISHED;
 		}
 
