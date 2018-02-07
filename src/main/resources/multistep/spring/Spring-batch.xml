@@ -43,7 +43,10 @@
         <batch:listeners>
             <batch:listener ref="sysoutListener"/>
         </batch:listeners>
+        <!-- jobParameter参数校验 -->
+        <batch:validator ref="validator"/>
     </batch:job>
+    <bean id="validator" class="org.vincent.mutlistep.SimpleJobParametersValidator"/>
     <!-- job 执行前后监听器。 -->
     <bean id="sysoutListener" class="org.vincent.mutlistep.listener.SystemOutJobExecutionListener"/>
     <!-- csv  作业开始配置
