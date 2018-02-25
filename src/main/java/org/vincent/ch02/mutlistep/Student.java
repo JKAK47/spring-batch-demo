@@ -1,4 +1,4 @@
-package org.vincent.mutlistep;
+package org.vincent.ch02.mutlistep;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;

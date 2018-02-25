@@ -1,4 +1,4 @@
-package org.vincent.custjob.base;
+package org.vincent.ch03.custjob.base;
 
 import java.io.Serializable;
 

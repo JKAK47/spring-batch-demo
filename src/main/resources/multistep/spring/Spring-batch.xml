@@ -46,9 +46,10 @@
         <!-- jobParameter参数校验 -->
         <batch:validator ref="validator"/>
     </batch:job>
-    <bean id="validator" class="org.vincent.mutlistep.SimpleJobParametersValidator"/>
+    <!-- SpringBatch 参数校验器 -->
+    <bean id="validator" class="org.vincent.ch02.mutlistep.SimpleJobParametersValidator"/>
     <!-- job 执行前后监听器。 -->
-    <bean id="sysoutListener" class="org.vincent.mutlistep.listener.SystemOutJobExecutionListener"/>
+    <bean id="sysoutListener" class="org.vincent.ch02.mutlistep.listener.SystemOutJobExecutionListener"/>
     <!-- csv  作业开始配置
         csvjob 包含一个step，step包含csv完整的读写功能；包含读，处理，写三个完整处理操作。
         commit-interval 标识提交间隔的个数
@@ -57,10 +58,10 @@
         <!-- 继承父类的Job监听器，job本身定义一个job监听器。 merge =true 表示继承父类监听器-->
         <batch:listeners merge="true">
             <batch:listener>
-                <bean class="org.vincent.mutlistep.listener.CustomJobExecutionListener"></bean>
+                <bean class="org.vincent.ch02.mutlistep.listener.CustomJobExecutionListener"></bean>
             </batch:listener>
         </batch:listeners>
-        <batch:step id="step1" next="step2"> <!--  next="step2" -->
+        <batch:step id="step1" next="step2" > <!--  next="step2" -->
             <batch:tasklet transaction-manager="transactionManager" task-executor="taskExecutor" throttle-limit="1">
                 <batch:chunk reader="csvItemReader" writer="csvItemWriter" processor="csvItemProcessor"
                              commit-interval="1">
@@ -97,7 +98,7 @@
     <bean id="reportMarshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
         <property name="classesToBeBound">
             <list>
-                <value>org.vincent.mutlistep.Student</value>
+                <value>org.vincent.ch02.mutlistep.Student</value>
             </list>
         </property>
     </bean>
@@ -106,11 +107,11 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="sql" value="select ID,NAME,ADDRESS,AGE FROM STUDENT"></property>
         <property name="rowMapper">
-            <bean class="org.vincent.mutlistep.StudentRowMapper"></bean>
+            <bean class="org.vincent.ch02.mutlistep.StudentRowMapper"></bean>
         </property>
     </bean>
 
-    <bean id="fileDeletingTasklet" class="org.vincent.mutlistep.FileDeletingTasklet">
+    <bean id="fileDeletingTasklet" class="org.vincent.ch02.mutlistep.FileDeletingTasklet">
     	<!-- 删除文件目录 -->
         <property name="directory" value="file:multistep/spring/"/>
     </bean>
@@ -148,8 +149,8 @@
             </bean>
         </property>
     </bean>
-    <bean id="student" class="org.vincent.mutlistep.Student"></bean>
-    <bean id="csvItemProcessor" class="org.vincent.mutlistep.StepItemProcessor"></bean>
+    <bean id="student" class="org.vincent.ch02.mutlistep.Student"></bean>
+    <bean id="csvItemProcessor" class="org.vincent.ch02.mutlistep.StepItemProcessor"></bean>
     <!-- lineTokenizer 配置csv文件分隔符以及文件每行数据对应的javaBean 对象对应的属性-->
     <bean id="lineTokenizer" class="org.springframework.batch.item.file.transform.DelimitedLineTokenizer">
         <property name="delimiter" value=","/>

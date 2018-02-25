@@ -1,9 +1,10 @@
-package org.vincent.custjob.base.job01;
+package org.vincent.ch03.custjob.base.job01;
 
 import org.springframework.stereotype.Service;
-import org.vincent.custjob.base.BaseItemProcessor;
-import org.vincent.custjob.base.job01.bean.Job01Initem;
-import org.vincent.custjob.base.job01.bean.Job01OutItem;
+import org.vincent.ch03.custjob.base.BaseItemProcessor;
+import org.vincent.ch03.custjob.base.job01.bean.Job01Initem;
+import org.vincent.ch03.custjob.base.job01.bean.Job01OutItem;
+
 
 /**
  * @Package: org.vincent.custjob.base.job01 <br/>
@@ -16,7 +17,7 @@ import org.vincent.custjob.base.job01.bean.Job01OutItem;
  */
 
 @Service("job01Processor")
-public class Job01Processor extends BaseItemProcessor<Job01Initem,Job01OutItem>{
+public class Job01Processor extends BaseItemProcessor<Job01Initem,Job01OutItem> {
 
 		/**
 		 * Process the provided item, returning a potentially modified or new item for continued

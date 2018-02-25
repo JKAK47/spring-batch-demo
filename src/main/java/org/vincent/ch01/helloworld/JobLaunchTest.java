@@ -1,4 +1,4 @@
-package org.vincent.helloworld01;
+package org.vincent.ch01.helloworld;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobParameters;
@@ -33,7 +33,6 @@ public class JobLaunchTest {
 						e.printStackTrace();
 						throw new Exception(e.getMessage(), e);
 				}
-				System.out.println("debug");
 		}
 
 }

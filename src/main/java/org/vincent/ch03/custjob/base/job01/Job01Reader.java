@@ -1,4 +1,4 @@
-package org.vincent.custjob.base.job01;
+package org.vincent.ch03.custjob.base.job01;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,8 +7,8 @@ import org.springframework.batch.core.ExitStatus;
 import org.springframework.batch.core.StepExecution;
 import org.springframework.batch.core.StepExecutionListener;
 import org.springframework.stereotype.Service;
-import org.vincent.custjob.base.SimpleItemReader;
-import org.vincent.custjob.base.job01.bean.Job01Initem;
+import org.vincent.ch03.custjob.base.SimpleItemReader;
+import org.vincent.ch03.custjob.base.job01.bean.Job01Initem;
 
 /**
  * @Package: org.vincent.custjob.base.job01 <br/>

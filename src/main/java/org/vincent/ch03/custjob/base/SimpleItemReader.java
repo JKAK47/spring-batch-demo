@@ -1,4 +1,5 @@
-package org.vincent.custjob.base;
+package org.vincent.ch03.custjob.base;
+
 
 import java.util.List;
 import org.springframework.batch.item.ItemReader;

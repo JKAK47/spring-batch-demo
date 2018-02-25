@@ -1,4 +1,4 @@
-package org.vincent.mutlistep;
+package org.vincent.ch02.mutlistep;
 
 import org.springframework.batch.core.JobParameters;
 import org.springframework.batch.core.JobParametersInvalidException;

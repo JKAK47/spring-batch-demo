@@ -1,4 +1,4 @@
-package org.vincent.mutlistep.listener;
+package org.vincent.ch02.mutlistep.listener;
 
 import org.springframework.batch.core.JobExecution;
 import org.springframework.batch.core.listener.JobExecutionListenerSupport;

@@ -19,10 +19,10 @@
 	<!-- 配置要扫描的包 -->
 	<context:component-scan base-package="org.vincent" />
   	<!-- 配置spring-batch  -->
+
   	<import resource="Spring-batch.xml"/>
 	<!-- 读取配置文件 -->
 	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-
 		<property name="locations">
 			<array>
 				<value>classpath:multistep/spring/db-mysql.properties</value>

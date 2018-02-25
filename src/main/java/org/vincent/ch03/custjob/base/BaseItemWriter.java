@@ -1,4 +1,4 @@
-package org.vincent.custjob.base;
+package org.vincent.ch03.custjob.base;
 
 import org.springframework.batch.item.ItemWriter;
 

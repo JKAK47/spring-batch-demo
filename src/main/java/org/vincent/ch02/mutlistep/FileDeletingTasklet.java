@@ -1,4 +1,4 @@
-package org.vincent.mutlistep;
+package org.vincent.ch02.mutlistep;
 
 import java.io.File;
 import org.springframework.batch.core.StepContribution;
@@ -76,6 +76,6 @@ public class FileDeletingTasklet implements Tasklet,InitializingBean{
 		 */
 		@Override
 		public void afterPropertiesSet() throws Exception {
-				Assert.notNull(directory,"directory must be set");
+				Assert.notNull(directory,"directory must be set.");
 		}
 }

@@ -1,10 +1,10 @@
-package org.vincent.custjob.base.job01;
+package org.vincent.ch03.custjob.base.job01;
 
 import java.util.List;
 import org.springframework.stereotype.Service;
-import org.vincent.custjob.base.BaseItemWriter;
-import org.vincent.custjob.base.OutItem;
-import org.vincent.custjob.base.job01.bean.Job01OutItem;
+import org.vincent.ch03.custjob.base.BaseItemWriter;
+import org.vincent.ch03.custjob.base.OutItem;
+import org.vincent.ch03.custjob.base.job01.bean.Job01OutItem;
 
 /**
  * @Package: org.vincent.custjob.base.job01 <br/>

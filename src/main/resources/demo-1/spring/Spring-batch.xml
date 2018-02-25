@@ -41,10 +41,10 @@
         </batch:step>
     </batch:job>
     <!-- TaskLet -->
-    <bean id="hello" class="org.vincent.helloworld01.helloworldTaskLet">
+    <bean id="hello" class="org.vincent.ch01.helloworld.helloworldTaskLet">
         <property name="Msg" value="Hello "></property>
     </bean>
-    <bean id="world" class="org.vincent.helloworld01.helloworldTaskLet">
+    <bean id="world" class="org.vincent.ch01.helloworld.helloworldTaskLet">
         <property name="Msg" value=" World!"></property>
     </bean>
     <!-- helloworld01 结束配置 -->

@@ -1,6 +1,7 @@
-package org.vincent.custjob.base.job01.bean;
+package org.vincent.ch03.custjob.base.job01.bean;
 
-import org.vincent.custjob.base.InItem;
+
+import org.vincent.ch03.custjob.base.InItem;
 
 /**
  * @Package: org.vincent.custjob.base.job01.bean <br/>
@@ -14,7 +15,7 @@ import org.vincent.custjob.base.InItem;
  * @Created by PengRong on 2018/2/8. <br/>
  */
 
-public class Job01Initem extends InItem{
+public class Job01Initem extends InItem {
 		private  String name;
 		private  String jobName;
 		public  Job01Initem(){

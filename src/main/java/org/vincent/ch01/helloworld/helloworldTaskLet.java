@@ -1,4 +1,4 @@
-package org.vincent.helloworld01;
+package org.vincent.ch01.helloworld;
 
 import org.springframework.batch.core.StepContribution;
 import org.springframework.batch.core.scope.context.ChunkContext;

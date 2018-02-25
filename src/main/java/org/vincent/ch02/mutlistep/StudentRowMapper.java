@@ -1,4 +1,4 @@
-package org.vincent.mutlistep;
+package org.vincent.ch02.mutlistep;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

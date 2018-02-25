@@ -46,18 +46,18 @@
         <!-- jobParameter参数校验 -->
         <batch:validator ref="validator"/>
     </batch:job>
-    <bean id="validator" class="org.vincent.mutlistep.SimpleJobParametersValidator"/>
+    <bean id="validator" class="org.vincent.ch02.mutlistep.SimpleJobParametersValidator"/>
     <!-- job 执行前后监听器。 -->
-    <bean id="sysoutListener" class="org.vincent.mutlistep.listener.SystemOutJobExecutionListener"/>
+    <bean id="sysoutListener" class="org.vincent.ch02.mutlistep.listener.SystemOutJobExecutionListener"/>
     <!-- csv  作业开始配置
         csvjob 包含一个step，step包含csv完整的读写功能；包含读，处理，写三个完整处理操作。
         commit-interval 标识提交间隔的个数
     -->
-    <batch:job id="job01"  parent="jobAbstract" restartable="false">
+    <batch:job id="job01"  parent="jobAbstract" restartable="true">
         <!-- 继承父类的Job监听器，job本身定义一个job监听器。 merge =true 表示继承父类监听器-->
         <batch:listeners merge="true">
             <batch:listener>
-                <bean class="org.vincent.mutlistep.listener.CustomJobExecutionListener"></bean>
+                <bean class="org.vincent.ch02.mutlistep.listener.CustomJobExecutionListener"></bean>
             </batch:listener>
         </batch:listeners>
         <batch:step id="step1" > <!--  next="step2" -->
