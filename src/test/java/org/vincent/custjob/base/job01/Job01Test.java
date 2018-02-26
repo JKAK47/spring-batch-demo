@@ -34,6 +34,7 @@ public class Job01Test extends AbstractJUnit4SpringContextTests {
 		public void testProcess() throws Exception {
 				JobParametersBuilder builder = new JobParametersBuilder();
 				builder.addString("jobname","custjob");
+				//给定  job 实例 + job Parameters 实例，通过joblauncher 启动job执行。
 				JobExecution execution = joblauncher.run(job, builder.toJobParameters());
 				System.out.println("Exit Status : " + execution.getStatus());
 				Assert.assertEquals(ExitStatus.COMPLETED, execution.getExitStatus());
