@@ -1,0 +1,519 @@
+
+# --------------------/pages/img/queryImg.jsp------------------------
+img.query.01=查詢影像文件
+img.query.02=第
+img.query.03=页
+img.query.04=單證類型
+img.query.05=箱子號
+img.query.06=箱子內序號
+img.query.07=盒子號
+img.query.08=盒子內序號
+img.query.09=掃描人員
+img.query.10=掃描日期
+img.query.11=新窗口查看影像(支持多个合并)
+img.query.12=影像文件列表
+img.query.13=影像顯示
+img.query.14=盒子号信息
+img.query.alert.03=請先選擇要下載的文檔
+
+# -----------imodule-policyprint-web/sys/index2#/printplc--------------
+print.plc.01=清空查詢條件
+print.plc.02=打印查詢
+print.plc.03=打印类別
+print.plc.04=保單歷史打印
+print.plc.05=任務流保單打印
+print.plc.06=打印保單查詢
+print.plc.07=保單號從
+print.plc.08=至
+print.plc.09=單證來源
+print.plc.10=業務來源
+print.plc.11=保險中介人代碼
+print.plc.12=主險險種
+print.plc.13=不包含主險險種
+print.plc.14=處理日期
+print.plc.15=是否保费融资
+print.plc.16=是否英文保单
+print.plc.17=是否邮寄保单
+print.plc.18=打印日期
+print.plc.19=打印選項
+print.plc.20=是否裝訂打印
+print.plc.21=是否強制郵寄保單
+print.plc.22=打印模組
+print.plc.23=全選
+print.plc.24=封面
+print.plc.25=承保表
+print.plc.26=基本條款
+print.plc.27=利益條例
+print.plc.28=現金價值表
+print.plc.29=保費發票
+print.plc.30=要保書
+print.plc.31=保單簽收回執
+print.plc.32=保單封底
+print.plc.33=保單發出通知書
+print.plc.34=郵寄保單
+print.plc.35=查詢結果
+print.plc.36=中文打印
+print.plc.37=英文打印
+print.plc.38=中英文打印
+print.plc.39=序號
+print.plc.40=保單號
+print.plc.41=保單持有人姓名
+print.plc.42=生效日期
+print.plc.43=保費
+print.plc.44=保單錄入日期
+print.plc.45=保險中介人姓名
+print.plc.46=分公司
+print.plc.47=打印次數
+print.plc.48=任務號
+print.plc.49=任務來源
+print.plc.50=上一環節處理意見
+print.plc.51=導出Excel
+
+# -------------------/pages/uw/UwManual.jsp--------------------
+uw.UmManual.init.32=累計保費
+uw.UmManual.init.33=问题代码
+uw.UmManual.init.34=通知书问题类型
+uw.UmManual.init.35=通知书类型
+uw.UmManual.init.36=新標費
+uw.UmManual.init.37=新实际保費
+uw.UmManual.init.38=佣金
+uw.UmManual.init.39=保存
+uw.UmManual.init.40=化验推荐信
+uw.UmManual.init.41=体检推荐信
+uw.UmManual.init.42=關於保單號
+uw.UmManual.init.43=（受保人為：
+uw.UmManual.init.44=請閣下盡快以UN回覆，切勿直接回覆此訊息，謝謝!
+uw.UmManual.init.45=請稍候
+uw.UmManual.init.46=後臺校驗及處理...
+uw.UmManual.init.47=進行中.......
+
+uw.UmManual.div.61=高風險客戶識別
+uw.UmManual.div.62=是否多層/離岸公司投保
+uw.UmManual.div.63=核保軌跡
+uw.UmManual.div.64=当前核保工作纸
+uw.UmManual.div.65=消息發送  
+uw.UmManual.div.66=代理人號
+uw.UmManual.div.67=工作時間發送
+uw.UmManual.div.68=受 保 人
+uw.UmManual.div.69=(已输入
+uw.UmManual.div.70=字)
+
+uw.UmManual.div.72=發送
+uw.UmManual.div.73=區	號
+uw.UmManual.div.74=號 碼
+uw.UmManual.div.75=(默認為代理人的手機號碼)
+uw.UmManual.div.76=工作時間發送
+uw.UmManual.div.77=受 保 人
+uw.UmManual.div.78=在途保單總保費:
+
+uw.UmManual.alert.01=追溯日期大于180天，是否继续？
+uw.UmManual.alert.02=受教育程度选择没有回答，需回退至复核！
+uw.UmManual.alert.03=系统未录入CRS的必需栏位，需回退至复核！
+uw.UmManual.alert.04=险种
+uw.UmManual.alert.05=承保方式不能为空!
+uw.UmManual.alert.06=承保方式不存在!
+uw.UmManual.alert.07=为次健体保单,承保方式不能选择可出单!
+uw.UmManual.alert.08=为标准体保单,承保方式不能选择次健体出单!
+uw.UmManual.alert.09=为非赠送险险种,承保方式不能选择附送!
+uw.UmManual.alert.10=为非赠送险险种,承保方式不能选择不附送!
+uw.UmManual.alert.11=確認
+uw.UmManual.alert.12=確認發送嗎？
+uw.UmManual.alert.13=微信內容不能為空
+uw.UmManual.alert.14=發送成功
+uw.UmManual.alert.15=当前有新增的通知书，是否挂起？
+uw.UmManual.alert.16=存在对应的关联的核保通知书,请先删除关联核保通知书
+
+
+############################# 保单查询 #########################
+# ---------------------------/gd/plcquery/PlcQuery.jsp---------------------
+gd.PlcQuery.title=保单查询
+gd.plcQuery.195=否
+gd.plcQuery.196=是否生僻字
+
+gd.plcQuery.alert.01=導出數據不能超過1000條！
+
+# ----------------------/gd/insureDetail.jsp------------------
+gd.plcQuery.197=保单综合信息
+
+# ----------------------gd/queryplcdetail/plcInfoDetail.jsp---------------
+gd.plcQuery.198=儲存生息
+gd.plcQuery.199=新
+
+# ----------------------/gd/queryplcdetail/moduleview/healthToldInfo_2.jsp------------------
+gd.PlcHealthInput.84=家族成員
+gd.PlcHealthInput.85=疾病1
+gd.PlcHealthInput.86=疾病2
+gd.PlcHealthInput.87=疾病3
+gd.PlcHealthInput.88=疾病4
+gd.PlcHealthInput.89=疾病5
+gd.PlcHealthInput.90=準受保人（國家及城市）
+gd.PlcHealthInput.91=準保單持有人（國家及城市）
+gd.PlcHealthInput.92=支
+gd.PlcHealthInput.93=年
+
+# -----------------------/gd/queryplcdetail/moduleview/InsureHistoryInfo.jsp-------------------
+gd.InsureHistoryInfo.01=總保障額(港元 HKD):
+gd.InsureHistoryInfo.02=人壽保障
+gd.InsureHistoryInfo.03=危疾保障
+gd.InsureHistoryInfo.04=住院入息保障
+gd.InsureHistoryInfo.05=意外保障
+
+# ----------------------/gd/queryplcdetail/moduleview/insureInterestInfo.jsp-------------------
+gd.insureInterestInfo.01=編印日期
+gd.insureInterestInfo.02=簽署日期
+gd.insureInterestInfo.03=年齡
+gd.insureInterestInfo.04=性別
+gd.insureInterestInfo.05=主險
+gd.insureInterestInfo.06=是否吸煙
+gd.insureInterestInfo.07=保額
+gd.insureInterestInfo.08=標準保費
+gd.insureInterestInfo.09=假設保單生效日期
+gd.insureInterestInfo.10=每期Levy徵費金額
+gd.insureInterestInfo.11=歲
+
+# --------------------/gd/queryplcdetail/moduleview/personalInfo.jsp-------------------
+gd.personalInfo.01=準保單持有人
+gd.personalInfo.02=國家（地區） / 省 / 市
+gd.personalInfo.03=地址
+gd.personalInfo.04=郵政編號
+gd.personalInfo.05=準受保人
+
+# ----------------------------/gd/plctrial/PlcTrialQuery.jsp-----------------------------
+gd.PlcTrialQuery.title=保單初審查詢
+gd.PlcTrialQuery.01=初审编码
+gd.PlcTrialQuery.02=分类
+gd.PlcTrialQuery.03=数据类型
+gd.PlcTrialQuery.04=控件类型
+gd.PlcTrialQuery.05=描述
+gd.PlcTrialQuery.06=审核记录
+gd.PlcTrialQuery.07=不适用
+gd.PlcTrialQuery.08=是
+gd.PlcTrialQuery.09=否
+gd.PlcTrialQuery.10=查询条件
+gd.PlcTrialQuery.11=投保检查表
+gd.PlcTrialQuery.12=投保單號碼：
+gd.PlcTrialQuery.13=任務號：
+gd.PlcTrialQuery.14=客戶姓名：
+gd.PlcTrialQuery.15=產品名稱：
+gd.PlcTrialQuery.16=收單日期：
+gd.PlcTrialQuery.17=掃描人員：
+gd.PlcTrialQuery.18=初審人員：
+gd.PlcTrialQuery.19=初審意見：
+gd.PlcTrialQuery.20=工作流任务列表(双击处理任务)
+gd.PlcTrialQuery.21=未填写
+
+# --------------/workflow/report/registerNBReport.jsp---------------
+gd.registerNBReport.title=新单登记查询
+gd.registerNBReport.01=全部
+gd.registerNBReport.02=渠道:
+gd.registerNBReport.03=代理人
+gd.registerNBReport.04=中介
+gd.registerNBReport.05=銀行
+gd.registerNBReport.06=電銷
+gd.registerNBReport.07=登记日期从:
+gd.registerNBReport.08=至:
+gd.registerNBReport.09=导出EXCEL
+gd.registerNBReport.10=登记网点:
+gd.registerNBReport.11=新業務部
+gd.registerNBReport.12=深圳外包
+gd.registerNBReport.13=中銀(蓮塘)
+gd.registerNBReport.14=中銀(奧海城)
+gd.registerNBReport.15=收单日期从:
+
+gd.registerNBReport.16=收單日期
+gd.registerNBReport.17=登記日期
+gd.registerNBReport.18=客戶姓名
+gd.registerNBReport.19=要保書編號
+gd.registerNBReport.20=主險產品名稱
+gd.registerNBReport.21=幣種
+gd.registerNBReport.22=保費
+gd.registerNBReport.23=中介人編號1
+gd.registerNBReport.24=中介人姓名1
+gd.registerNBReport.25=中介人渠道1
+gd.registerNBReport.26=中介人组别1
+gd.registerNBReport.27=中介人編號2
+gd.registerNBReport.28=中介人姓名2
+gd.registerNBReport.29=中介人渠道2
+gd.registerNBReport.30=中介人组别2
+gd.registerNBReport.31=登記網點(如銀保通/新業務部)
+gd.registerNBReport.32=登記人員
+gd.registerNBReport.33=備註
+
+# ---------------------------/fna/fnaQuery.jsp------------------------
+fna.fnaQuery.01=FNA讀取記錄成功
+fna.fnaQuery.02=開始創建新FNA
+fna.fnaQuery.03=未找到記錄，請檢查投保單號或保單號
+fna.fnaQuery.04=FNA提交失敗
+fna.fnaQuery.05=FNA提交成功
+fna.fnaQuery.06=，請檢查未能通過的原因
+fna.fnaQuery.07=FNA暫存失敗
+fna.fnaQuery.08=FNA暫存成功
+fna.fnaQuery.09=分析表資料
+fna.fnaQuery.10=*要保書/保單編號
+fna.fnaQuery.11=讀取
+fna.fnaQuery.12=*申請類別
+fna.fnaQuery.13=簽署日期
+fna.fnaQuery.14=FNA表格類型
+fna.fnaQuery.15=所選產品與投保書一致
+fna.fnaQuery.16=FNA更新版本
+fna.fnaQuery.17=上次更新日期
+fna.fnaQuery.18=上次更新人員
+fna.fnaQuery.19=購買產品名稱
+fna.fnaQuery.20=eFNA選購買產品名稱
+fna.fnaQuery.21=投保人資料及財務狀況
+fna.fnaQuery.22=投保人教育程度
+fna.fnaQuery.23=其他
+fna.fnaQuery.24=是否患有殘障/疾病(1)難以理解保險產品或(2)陷於財政困難而難以維持生計？
+fna.fnaQuery.25=個人財務狀況
+fna.fnaQuery.26=每月總收入(港元)
+fna.fnaQuery.27=全年總淨收入(港元)
+fna.fnaQuery.28=流動資產總淨值(港元)
+fna.fnaQuery.29=固定資產值(如房地產)
+fna.fnaQuery.30=資產總淨值
+
+fna.fnaQuery.31=總家庭保障需要
+fna.fnaQuery.32=總退休儲備需要
+fna.fnaQuery.33=預期總儲蓄金額
+fna.fnaQuery.34=危疾/醫療保障需要
+
+fna.fnaQuery.35=閣下選購本公司產品的目標為何？(可選多於一項)
+fna.fnaQuery.36=為應付不時之需的財務保障 (例如︰死亡、意外、殘疾等)
+fna.fnaQuery.37=為醫療需要作準備(例如︰危疾、住院等)
+fna.fnaQuery.38=為未來提供定期的收入 (例如︰退休收入等)
+fna.fnaQuery.39=為未來需要作儲備(例如︰子女教育、退休等)
+fna.fnaQuery.40=投資
+fna.fnaQuery.41=其他
+
+fna.fnaQuery.42=閣下考慮以哪種類型的保險產品迎合閣下上述的目標？(可選多於一項)
+fna.fnaQuery.43=純保險產品(沒有任何儲蓄或投資的成份) (例如︰定期保險)
+fna.fnaQuery.44=有儲蓄成份的保險產品 (有儲蓄但沒有投資成份) (例如︰非分紅保單)
+fna.fnaQuery.45=有投資成份的保險產品 (投資決定和風險由保險公司承擔) (例如︰分紅保單、萬用壽險)
+fna.fnaQuery.46=有投資成份的保險產品(投資決定和風險由保單持有人承擔) (例如︰投資相連保險計劃)
+fna.fnaQuery.47=其他
+
+fna.fnaQuery.48=閣下投購保單及/或投資計劃的目標得益/保障年期為多久？
+fna.fnaQuery.49=閣下繳付保費的負擔能力
+fna.fnaQuery.50=過去兩年所有收入來源的每月平均收入不少於
+fna.fnaQuery.51=具體金額
+fna.fnaQuery.52=在以下範圍內
+fna.fnaQuery.53=閣下現時累積的流動資產約有多少？請註明
+fna.fnaQuery.54=種類
+
+fna.fnaQuery.55=現金
+fna.fnaQuery.56=銀行存款
+fna.fnaQuery.57=貨幣市場帳戶
+fna.fnaQuery.58=交易活躍的股票
+fna.fnaQuery.59=債券及互惠基金
+fna.fnaQuery.60=美國國庫債券
+fna.fnaQuery.61=其它
+fna.fnaQuery.62=金額
+fna.fnaQuery.63=是否親筆詳述不回應上述4(a)及(b)原因
+
+fna.fnaQuery.64=閣下能夠及願意支付保單及/或投資計劃的年期為？
+fna.fnaQuery.65=就閣下在 (c)所選擇的保單/投資計劃之整段供款年期內， 閣下每月可承擔的保費佔閣下個人可動用收入比率為？
+fna.fnaQuery.66=就閣下在 (c)所選擇的保單/投資計劃之整段供款年期內， 閣下可承擔的保費佔閣下個人的流動資產總淨值比率為？
+fna.fnaQuery.67=就閣下繳付保費的能力，請註明閣下的資金來源？
+fna.fnaQuery.68=薪酬
+fna.fnaQuery.69=收入
+fna.fnaQuery.70=儲蓄
+fna.fnaQuery.71=投資
+fna.fnaQuery.72=其他
+fna.fnaQuery.73=根據閣下的上述選項，中介人曾與閣下討論下列保險產品的選擇(因應中介人所能提供的產品)，以迎合閣下選購保險產品的目標及滿足閣下的需要
+
+fna.fnaQuery.74=曾介紹的保險產品
+fna.fnaQuery.75=產品
+fna.fnaQuery.76=目標
+fna.fnaQuery.77=不時之需
+fna.fnaQuery.78=醫療需要
+fna.fnaQuery.79=定期收入
+fna.fnaQuery.80=未來需要
+fna.fnaQuery.81=類型
+fna.fnaQuery.82=純保險
+fna.fnaQuery.83=儲蓄成份
+fna.fnaQuery.84=投資成份
+
+fna.fnaQuery.85=中介人建議理由
+fna.fnaQuery.86=是否在問題5iii填寫正確的附加險保障年期
+fna.fnaQuery.87=查看影像
+fna.fnaQuery.88=切割影像
+
+fna.fnaQuery.89=必須輸入簽署日期
+fna.fnaQuery.90=必須輸入申請類別 
+fna.fnaQuery.91=必須輸入投保人教育程度
+fna.fnaQuery.92=必須輸入是否患有殘障/疾病而(1)難以理解保險產品或(2)陷於財政困難而難以維持生計
+fna.fnaQuery.93=必須輸入每月總收入
+fna.fnaQuery.94=必須輸入全年總淨收入(港元)
+fna.fnaQuery.95=必須輸入流動資產總淨值(港元)
+fna.fnaQuery.96=必須輸入固定資產淨值(港元)
+fna.fnaQuery.97=必須輸入資產總淨值(港元)
+fna.fnaQuery.98=必須輸入總家庭保障需要(港元)
+fna.fnaQuery.99=必須輸入總退休儲備需要(港元)
+fna.fnaQuery.100=必須輸入預期總儲蓄金額(港元)
+fna.fnaQuery.101=必須輸入危疾/醫療保障需要(港元)
+fna.fnaQuery.102=必須輸入最終選購的產品是否跟保單申請表一致
+fna.fnaQuery.103=必須回答FNA問題1
+fna.fnaQuery.104=必須回答FNA問題2
+fna.fnaQuery.105=必須回答FNA問題3
+fna.fnaQuery.106=必須同時輸入FNA4bi 和FNA4bii
+fna.fnaQuery.107=親筆詳述不提供4(a)或(b)原因=否，只輸入了FNA4a或FNA4b
+fna.fnaQuery.108=沒有回答4a和4b, 須拒保
+fna.fnaQuery.109=必須回答FNA問題4c
+fna.fnaQuery.110=必須輸入FNA問題4di 和FNA問題4dii
+fna.fnaQuery.111=必須回答FNA問題4e
+fna.fnaQuery.112=FNA問題1 = 其他
+fna.fnaQuery.113=FNA問題2 = 其他
+
+fna.fnaQuery.114=必須輸入FNA問題5 – 產品
+fna.fnaQuery.115=必須輸入FNA問題5i – 目標
+fna.fnaQuery.116=必須輸入FNA問題5ii – 類型
+fna.fnaQuery.117=FNA問題5i – 目標 = 其他
+fna.fnaQuery.118=FNA問題5ii – 類型 = 其他
+fna.fnaQuery.119=FNA問題2與FNA問題5ii – 類型不符
+fna.fnaQuery.120=FNA5i – 目標與FNA問題1不符
+fna.fnaQuery.121=FNA5內的所有FNA5i – 目標選擇與FNA1不相同
+fna.fnaQuery.122=Q5ii產品類別選項需與FNA Q2選項不相同
+fna.fnaQuery.123=選擇多於一項FNA5ii – 類型
+fna.fnaQuery.124=介紹的產品必須有重複滿足要保人選購產品的其中一個目標 
+fna.fnaQuery.125=必須填寫中介人建議理由
+
+fna.fnaQuery.126=請輸入要保書/保單編號
+fna.fnaQuery.127=請選擇申請類別
+fna.fnaQuery.128=請先讀取要保書/保單編號
+fna.fnaQuery.129=必須輸入中介人建議理由
+fna.fnaQuery.130=FNA表單有未完成及/或錯誤的部分，是否仍然提交？
+fna.fnaQuery.131=是否確認提交？
+
+fna.fnaQuery.132=請稍候
+fna.fnaQuery.133=後臺校驗及處理
+fna.fnaQuery.134=進行中.......
+
+# ---------------------/crs/crsQuery.jsp---------------------
+crs.crsQuery.title=查詢CRS
+crs.crsQuery.01=有效
+crs.crsQuery.02=無效
+crs.crsQuery.03=查询参数异常
+crs.crsQuery.04=(空)
+crs.crsQuery.05=新單
+crs.crsQuery.06=附加險
+crs.crsQuery.07=女
+crs.crsQuery.08=男
+
+# -------------------/gd/plctrial/PlcTrial.jsp------------------
+nb.PlcTrial.title=保單初審
+nb.PlcTrial.01=(提示：雙擊選擇處理)
+nb.PlcTrial.02=工作流任务列表(双击处理任务)
+nb.PlcTrial.03=提示
+nb.PlcTrial.04=关闭
+nb.PlcTrial.05=輸入投保單號
+
+###########################  新单录入  #########################
+# ----------------/gd/PlcInput.jsp------------------
+gd.PlcInput.89=错误信息明细
+gd.PlcInput.90=保單日期不能早于受保人出生日期
+gd.PlcInput.91=主險未處理,请處理！
+gd.PlcInput.92=請稍候
+gd.PlcInput.93=後臺校驗及處理...
+gd.PlcInput.94=進行中.......
+gd.PlcInput.95=祝賀
+gd.PlcInput.96=保單錄入提交成功，保單號為
+gd.PlcInput.97=請先獲取投保單號！
+gd.PlcInput.98=错误信息及处理意见
+gd.PlcInput.99=是否进入FNA
+gd.PlcInput.100=否
+gd.PlcInput.101=是
+gd.PlcInput.102=确定提交
+gd.PlcInput.103=取消
+
+# ---------------------------/gd/PlcHolderInput.jsp---------------------
+gd.PlcHolderInput.67=城市
+gd.PlcHolderInput.80=郵政編碼
+wf.registerNB.area.854=新加坡
+
+# ---------------------/gd/CustCrsInput.jsp-----------------------------
+gd.crs.apl.31=錯誤;
+gd.crs.apl.32=國家
+
+# ------------------/gd/PlcBnfInput.jsp----------------
+gd.PlcBnfInput.24=法定受益人
+btn.edit=编辑
+
+# -------------/gd/PlcOfferInput.jsp------------------
+gd.PlcOfferInput.158=付款賬戶幣種與保單幣種不一致！付款幣種賬戶為
+gd.PlcOfferInput.159=,保單幣種為
+gd.PlcOfferInput.160=兩次輸入的賬號不一致！
+btn.handle=處理
+gd.PlcOfferInput.161=您确认想要增加附加险吗？
+gd.PlcOfferInput.162=該代理人已經離職，不能出單!
+gd.PlcOfferInput.163=該代理人不能銷售此業務來源!
+gd.PlcOfferInput.164=請再次輸入賬戶
+
+# ----------------------/gd/PlcResumeEntry.jsp-------------------------
+gd.PlcResumeEntry.01=人壽保障
+gd.PlcResumeEntry.02=危疾保障
+gd.PlcResumeEntry.03=住院入息保障
+gd.PlcResumeEntry.04=你确定要删除吗?
+gd.PlcResumeEntry.05=请选择要删除的行
+gd.PlcResumeEntry.06=總保障額:
+gd.PlcResumeEntry.07=投保履歷錄入
+gd.PlcResumeEntry.08=保障額(港元HKD)
+
+# -------------------------/gd/PlcStockInput.jsp------------------------
+gd.PlcStockInput.39=CRS资料录入
+gd.PlcStockInput.40=点击录入
+gd.PlcStockInput.41=你确定要删除吗?
+gd.PlcStockInput.42=请选择要删除的行
+gd.PlcStockInput.43=股份百分比不能小于10
+gd.PlcStockInput.44=股份百分比不能大于100
+gd.PlcStockInput.45=香港手机不符合8位長度
+gd.PlcStockInput.46=澳門手機號不符合8位長度
+gd.PlcStockInput.47=國內手機號不符合11位長度
+gd.PlcStockInput.48=香港家庭電話不符合8位長度
+gd.PlcStockInput.49=澳門家庭電話不符合8位長度
+gd.PlcStockInput.50=国内家庭電話不符合11位長度
+gd.PlcStockInput.51=保存成功，是否關閉該頁面？
+gd.PlcStockInput.52=请选择待处理行！
+gd.PlcStockInput.53=國家
+
+# --------------------/gd/PlcFinanceDeclInput.jsp----------------------
+gd.PlcFinanceDeclInput.79=问题
+
+# ---------------------/gd/insureApprove.jsp-------------------------
+gd.insureApprove.42=错误信息明细
+gd.insureApprove.43=保單號,投保单号不能全為空!
+gd.insureApprove.44=總保障額:
+gd.insureApprove.45=保單日期不能早于受保人出生日期
+gd.insureApprove.46=错误信息及处理意见
+gd.insureApprove.47=确定提交
+gd.insureApprove.48=回退至录入处理意见
+
+# -----------------------/uw/UwQuery.jsp------------------
+uw.UwQuery.97=查询加费信息
+uw.UwQuery.98=詳細信息
+uw.UwQuery.99=短信詳細資訊
+uw.UwQuery.100=微信詳細資訊
+
+
+
+
+# --------------------/edr/crs/crsRegister.jsp------------------------
+crs.register.01=登記失敗！原因：
+crs.register.02=CRS確認書登記成功!
+crs.register.03=保單號不能為空!
+crs.register.04=登記日期不能為空!
+crs.register.05=校检失敗,原因：
+crs.register.06=该保單號不存在，请重新录入!
+crs.register.07=重置
+
+# <s:text name='ddddd' />
+# -----------------------/edr/crs/crsQueryAndPrint.jsp-------------------
+crs.crsQueryAndPrint.01=全部
+crs.crsQueryAndPrint.02=保單號
+crs.crsQueryAndPrint.03=未列印
+crs.crsQueryAndPrint.04=已列印
+crs.crsQueryAndPrint.05=創建日期不能為空!
+crs.crsQueryAndPrint.06=開始日期不能大於結束日期！
+crs.crsQueryAndPrint.07=正在查詢...
+crs.crsQueryAndPrint.08=作廢數據不能打印！
+crs.crsQueryAndPrint.09=暫收費收據詳細信息
+crs.crsQueryAndPrint.10=創建日期
+crs.crsQueryAndPrint.11=CRS登記書历史記錄

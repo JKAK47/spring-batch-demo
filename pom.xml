@@ -119,6 +119,21 @@
         <!-- mysql jdbc  start -->
 
 
+		<!--  NetWork lib -->
+		<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+		<dependency>
+		    <groupId>org.apache.httpcomponents</groupId>
+		    <artifactId>httpclient</artifactId>
+		    <version>4.3.6</version>
+		</dependency>
+		<!-- Json parse  -->
+		<dependency>  
+		    <groupId>com.alibaba</groupId>  
+		    <artifactId>fastjson</artifactId>  
+		    <version>1.2.44</version>  
+		</dependency> 
+						
+
     </dependencies>
     <build>
     	<finalName>spring-batch-demo</finalName>

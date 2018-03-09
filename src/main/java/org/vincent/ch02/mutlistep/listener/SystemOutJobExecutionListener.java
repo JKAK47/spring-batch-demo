@@ -20,7 +20,7 @@ public class SystemOutJobExecutionListener extends JobExecutionListenerSupport {
 		 */
 		@Override
 		public void beforeJob(JobExecution jobExecution) {
-				System.out.println("JobExecution creat time:" + jobExecution.getCreateTime()+"\t jobName: "+jobExecution.getJobInstance().getJobName());
+				System.out.println("JobExecution create time:" + jobExecution.getCreateTime()+"\t jobName: "+jobExecution.getJobInstance().getJobName());
 //		throw new RuntimeException("listener make error!");
 		}
 

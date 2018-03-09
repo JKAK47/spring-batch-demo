@@ -31,7 +31,7 @@ public class MultiStepTest extends AbstractJUnit4SpringContextTests {
 		@Test
 		public void testMultiStep() throws JobExecutionAlreadyRunningException, JobRestartException, JobInstanceAlreadyCompleteException, JobParametersInvalidException {
 				JobParametersBuilder builder = new JobParametersBuilder();
-				LocalDate localDate= LocalDate.parse("2018-08-06").plusDays(1);
+				LocalDate localDate= LocalDate.parse("2018-09-06").plusDays(1);
 				builder.addDate("start", Date.from(localDate.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()));
 				joblauncher.run(job, builder.toJobParameters());
 
