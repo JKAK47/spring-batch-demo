@@ -3,18 +3,15 @@ package org.vincent.translate;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.io.UnsupportedEncodingException;
 import java.net.URISyntaxException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.vincent.translate.bean.TranslateBean;
 
 public class FileUtils {
@@ -73,6 +70,13 @@ public class FileUtils {
 		}
 		
 	}
+
+		/**
+		 * 通过这个将一个文件中待翻译资源 翻译为英文并持久化到文件中。
+		 * @param args
+		 * @throws URISyntaxException
+		 * @throws IOException
+		 */
 	public static void main(String[] args) throws URISyntaxException, IOException {
 			try {
 				List<TranslateBean> beans=getResources();
