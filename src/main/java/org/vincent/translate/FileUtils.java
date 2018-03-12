@@ -12,6 +12,9 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.aspectj.weaver.ast.Not;
+import org.springframework.util.StringUtils;
 import org.vincent.translate.bean.TranslateBean;
 
 public class FileUtils {
@@ -28,14 +31,21 @@ public class FileUtils {
 	 */
 	public static List<TranslateBean> getResources() throws URISyntaxException, IOException{
 		List<TranslateBean> listBean=new ArrayList<>();
+		List<String> Notes=new ArrayList<>();
 		Path path=Paths.get(FILEDIR, FromFILENAME);
+		TranslateBean bean=null;
 		//Reader reader=new FileReader(file);
 		try(BufferedReader reader= new BufferedReader(new InputStreamReader(new FileInputStream(path.toFile()),CharSet))){
 			String text = reader.readLine();
 			while (null != text) {
-				TranslateBean bean=new TranslateBean();
+				bean=new TranslateBean();
 				text=text.trim();
 				if (text.startsWith("#")) {
+					Notes.add(text.trim());
+					text=reader.readLine();
+					continue;
+				}
+				if (StringUtils.isEmpty(text)) {
 					text=reader.readLine();
 					continue;
 				}
@@ -47,6 +57,7 @@ public class FileUtils {
 			}
 		}catch (Exception e) {
 			// TODO: handle exception
+			System.out.println(bean);
 			e.printStackTrace();
 			throw e;
 		}

@@ -11,6 +11,11 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
@@ -20,6 +25,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
+import org.vincent.translate.bean.TranslateBean;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -32,6 +38,33 @@ public class TranslateUtils {
 	private static String Secretkey="68RcD5OFjj5tnLqgIBgPmmUNoLcV05DP";
 	private static String appKey ="2dc5812808d70acc";
 	
+	
+	/**
+	 * 翻译文本多线程版本
+	 * @param translateBeans
+	 * @return
+	 * @throws InterruptedException
+	 * @throws ExecutionException
+	 */
+	public List<TranslateBean> multiTranslateToEng(List<TranslateBean> translateBeans) throws InterruptedException, ExecutionException {
+		ExecutorService executor=Executors.newFixedThreadPool(3);
+		if (translateBeans != null && translateBeans.size() > 0 ) {
+			for (TranslateBean translateBean : translateBeans) {
+			Future<String> result =	executor.submit(new Callable<String>() {
+					@Override
+					public String call() throws Exception {
+						String engText =translateFromEng(translateBean.getChText());
+						return engText;
+					}
+				});
+			String engText = result.get();
+			translateBean.setEnText(engText);
+			}
+			return translateBeans;
+		}else {
+			return null;
+		}
+	}
 	/**
 	 *  接受一个中文并文本并返回英文文本
 	 * @param chineseText
