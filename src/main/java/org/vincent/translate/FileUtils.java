@@ -22,16 +22,17 @@ public class FileUtils {
 	private static String FILEDIR="C:\\app\\file";
 	private static String FromFILENAME="filein.txt";
 	private static String toFILENAME="fileout.txt";
+	private static String TOSQL="fileout.sql";
 	private static String CharSet="UTF-8";
 	/**
-	 *  读取txt文件映射为键值对
+	 *  读取txt文件映射为翻译键值对
 	 * @return
 	 * @throws URISyntaxException
 	 * @throws IOException
 	 */
 	public static List<TranslateBean> getResources() throws URISyntaxException, IOException{
 		List<TranslateBean> listBean=new ArrayList<>();
-		List<String> Notes=new ArrayList<>();
+		List<String> Notes=new ArrayList<>();//记录文档中注释项
 		Path path=Paths.get(FILEDIR, FromFILENAME);
 		TranslateBean bean=null;
 		//Reader reader=new FileReader(file);
@@ -63,12 +64,41 @@ public class FileUtils {
 		}
 		return listBean;
 	}
+	/**
+	 * 根据翻译后的键值对获取到安装 key=value 形式持久化到文件中
+	 * @param beans
+	 */
 	public static void saveFile(List<TranslateBean>  beans){
 		Path path=Paths.get(FILEDIR,toFILENAME);
 		StringBuilder builder= null;
 		try(BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path.toFile()),CharSet))){
 			for (TranslateBean bean : beans) {
 				builder=new StringBuilder();
+				builder.append(bean.getKey()+"="+ bean.getEnText());
+				writer.write(builder.toString());
+				writer.newLine();
+			}
+			writer.flush();
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	/**
+	 * 根据翻译后的键值对获取到安装 key=value 形式持久化到文件中
+	 * @param beans
+	 * INSERT INTO t_expcodedef (appid, code, name, engname, smpname, lasttime) VALUES ('sys_lp', 'sys_lp-UW10092', '根據保單號、投保單號、投保人客戶號、受保人客戶號獲取核保問題信息集合失敗', 'According To The Policy Number, The Policy Number, The Insured Client Number, The Insured Client Number To Obtain The Insured Problem Information Set Failed', '根据保单号、投保单号、投保人客户号、受保人客户号获取核保问题信息集合失败', '2018-03-13');
+	 */
+	public static void savaSQL(List<TranslateBean>  beans){
+		Path path=Paths.get(FILEDIR,TOSQL);
+		StringBuilder builder= null;
+		try(BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path.toFile()),CharSet))){
+			for (TranslateBean bean : beans) {
+				builder=new StringBuilder();
+				builder.append("INSERT INTO t_expcodedef (appid, code, name, engname, smpname, lasttime) VALUES ('sys_lp',");
 				builder.append(bean.getKey()+"="+ bean.getEnText());
 				writer.write(builder.toString());
 				writer.newLine();
