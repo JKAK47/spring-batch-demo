@@ -117,6 +117,12 @@ public class TranslateUtils {
 			this.from = from;
 		}
 	}
+
+		/**
+		 * 将翻译后的结果json字符串解析，并取得解析后的英文翻译
+		 * @param parseStr
+		 * @return
+		 */
 	@SuppressWarnings("unchecked")
 	private static Map<String, QueryPair> parseJson(String parseStr){
 		 Map<String, QueryPair> result =new HashMap<>(1);

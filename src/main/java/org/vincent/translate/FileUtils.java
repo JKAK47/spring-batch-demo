@@ -2,8 +2,10 @@ package org.vincent.translate;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
@@ -12,8 +14,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-
-import org.aspectj.weaver.ast.Not;
 import org.springframework.util.StringUtils;
 import org.vincent.translate.bean.TranslateBean;
 
@@ -92,14 +92,26 @@ public class FileUtils {
 	 * @param beans
 	 * INSERT INTO t_expcodedef (appid, code, name, engname, smpname, lasttime) VALUES ('sys_lp', 'sys_lp-UW10092', '根據保單號、投保單號、投保人客戶號、受保人客戶號獲取核保問題信息集合失敗', 'According To The Policy Number, The Policy Number, The Insured Client Number, The Insured Client Number To Obtain The Insured Problem Information Set Failed', '根据保单号、投保单号、投保人客户号、受保人客户号获取核保问题信息集合失败', '2018-03-13');
 	 */
-	public static void savaSQL(List<TranslateBean>  beans){
+	public static void saveSQL(List<TranslateBean>  beans) throws IOException {
 		Path path=Paths.get(FILEDIR,TOSQL);
+		File file=path.toFile();
+		if (!file.exists()){
+				file.createNewFile();
+		}else {
+				//清空文本内容
+				clearFile(file);
+		}
 		StringBuilder builder= null;
-		try(BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path.toFile()),CharSet))){
+		try(BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file),CharSet))){
+
 			for (TranslateBean bean : beans) {
 				builder=new StringBuilder();
-				builder.append("INSERT INTO t_expcodedef (appid, code, name, engname, smpname, lasttime) VALUES ('sys_lp',");
-				builder.append(bean.getKey()+"="+ bean.getEnText());
+				builder.append("INSERT INTO t_expcodedef (appid, code, name, engname, smpname, lasttime) VALUES ('sys_lp', ");
+				builder.append("'"+bean.getKey()+"', ");//code
+				builder.append("'"+bean.getChText()+"', ");//name
+				builder.append("'"+bean.getEnText()+"', ");//engname
+				builder.append("'"+bean.getChText()+"', ");//engname
+				builder.append("'2018-03-13');");
 				writer.write(builder.toString());
 				writer.newLine();
 			}
@@ -113,6 +125,25 @@ public class FileUtils {
 	}
 
 		/**
+		 * 不删除现有文件，文件如果不存在将自动生成。
+		 * 清空文件内容
+		 * @param file
+		 */
+		private static void clearFile(File file) {
+				try {
+						if(!file.exists()) {
+								file.createNewFile();
+						}
+						FileWriter fileWriter =new FileWriter(file);
+						fileWriter.write("");
+						fileWriter.flush();
+						fileWriter.close();
+				} catch (IOException e) {
+						e.printStackTrace();
+				}
+		}
+
+		/**
 		 * 通过这个将一个文件中待翻译资源 翻译为英文并持久化到文件中。
 		 * @param args
 		 * @throws URISyntaxException
@@ -122,12 +153,10 @@ public class FileUtils {
 			try {
 				List<TranslateBean> beans=getResources();
 				for (TranslateBean translateBean : beans) {
-					System.out.println(translateBean);
 					String EnText = TranslateUtils.translateFromEng(translateBean.getChText());
 					translateBean.setEnText(EnText);
-					System.out.println(translateBean);
 				}
-				saveFile(beans);
+				saveSQL(beans);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
