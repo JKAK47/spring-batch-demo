@@ -1,5 +1,5 @@
 package org.vincent.translate;
- 
+
 
 /**
  * 有道翻译测试案例
