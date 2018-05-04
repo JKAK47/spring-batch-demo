@@ -133,7 +133,15 @@
 		    <version>1.2.44</version>  
 		</dependency> 
 						
-
+		<!-- FTP Client start -->
+		<!-- https://mvnrepository.com/artifact/commons-net/commons-net -->
+		<dependency>
+		    <groupId>commons-net</groupId>
+		    <artifactId>commons-net</artifactId>
+		    <version>3.6</version>
+		</dependency>
+		<!-- FTP Client  stop -->
+		
     </dependencies>
     <build>
     	<finalName>spring-batch-demo</finalName>
