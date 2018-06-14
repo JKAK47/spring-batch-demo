@@ -40,6 +40,7 @@ public class FileUtils {
             String[] children = filePath.list();
             //递归删除目录中的子目录下所有文件以及子目录和他的子文件
             for (int i=0; i<children.length; i++) {
+            	//通过 new File(filePath, children[i]) filepath目录和改目录下的一个文件 children[i] 构成一个新的File实例
                 boolean success = deleteFile(new File(filePath, children[i]));
                 if (!success) {
                     return false;
