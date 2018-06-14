@@ -70,7 +70,7 @@ public class PropUtils {
 		System.out.println(properties.getProperty(pname));
 		}
 		// 第二种ClassLoader, 从: 项目根目录/target/classes/ 目录加载文件, 从系统 class loader下加载文件
-		//编译后 src/main/resources目录下的资源文件都会复制一份到 "项目根目录/target/classes/" 目录下
+		//编译后 src/main/resources目录下的资源文件都会复制一份到 "项目根目录/target/classes/" 目录下，但是IDEA 编辑器不会自动这样做。需要在pom文件制定资源文件copy配置
 		@SuppressWarnings("unused")
 		InputStream inputStream = ClassLoader.getSystemResourceAsStream("log4j.properties");
 		inputStream = ClassLoader.getSystemClassLoader().getSystemResourceAsStream("log4j.properties");
