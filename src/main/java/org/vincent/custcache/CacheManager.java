@@ -1,4 +1,4 @@
-package org.vincent.cache;
+package org.vincent.custcache;
 //Description: 管理缓存 
 
 import java.util.ArrayList;

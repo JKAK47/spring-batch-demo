@@ -1,4 +1,4 @@
-package org.vincent.cache;
+package org.vincent.custcache;
 
 public class Cache { 
     private String key;//缓存ID 

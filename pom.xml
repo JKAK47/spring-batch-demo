@@ -142,6 +142,28 @@
 		</dependency>
 		<!-- FTP Client  stop -->
 		
+		
+		<!-- java Cache begin -->
+		<!-- https://mvnrepository.com/artifact/javax.cache/cache-api
+		JSR 107 Cache 缓存api，并不是缓存软件实现，还需要一个缓存实现厂商的jar包
+		 -->
+		<dependency>
+		    <groupId>javax.cache</groupId>
+		    <artifactId>cache-api</artifactId>
+		    <version>1.1.0</version>
+		</dependency>
+		
+		<!-- ehcache 缓存实现 
+			 cache-api.jar java cache 接口API定义
+			 ehcache.jar cache 具体软件实现
+			 
+		 -->
+		 <dependency>
+      		<groupId>org.ehcache</groupId>
+      		<artifactId>ehcache</artifactId>
+      		<version>3.5.2</version>
+    	</dependency>  								  	  
+		<!-- java Cache end -->
     </dependencies>
     <build>
     	<finalName>spring-batch-demo</finalName>
