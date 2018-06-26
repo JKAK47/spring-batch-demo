@@ -15,6 +15,7 @@ import javax.cache.spi.CachingProvider;
  * 代码基于 JCache API 写的
  * @author pengrong
  *http://www.ehcache.org/documentation/3.5/107.html
+ *
  */
 public class EhCacheHelloWorldJSR107 {
 
