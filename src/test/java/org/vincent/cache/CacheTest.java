@@ -1,12 +1,15 @@
 package org.vincent.cache;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
 import org.vincent.custcache.Cache;
 import org.vincent.custcache.CacheManager;
-
+/**
+ * 自定义Cache 案例測試
+ * @author liuhy
+ *
+ */
 public class CacheTest {
 	/**
 	 * https://www.cnblogs.com/glacierh/p/5653512.html
