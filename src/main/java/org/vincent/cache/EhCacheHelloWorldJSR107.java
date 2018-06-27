@@ -54,10 +54,11 @@ public class EhCacheHelloWorldJSR107 {
 		System.out.println(isture);
 		isture=cache.putIfAbsent(2L, "SDFAS");// key =2L 的值已经有了，就不会再次插入 返回false
 		System.out.println(isture);
-		cache=manager.getCache("jCache");//获取到Cache 
-		cache=manager.getCache("jCache", Long.class, String.class);  //获取到Cache 
+		cache=manager.getCache("jCache");//获取到Cache ，没有指定 K V 的类型
+		cache=manager.getCache("jCache", Long.class, String.class);  //获取到Cache ,指定 K V 的类型
 		
 		cache.close();//关闭cache
 		manager.close();//关闭 cachemanager,释放所有cache 实例
+		System.out.println(Math.multiplyExact(10,20));
 	}
 }
