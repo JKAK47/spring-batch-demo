@@ -7,7 +7,12 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cache.annotation.Caching;
 import org.springframework.stereotype.Service;
 
-@Service  
+/**
+ * ehcache 2.10.x 集成spring 
+ * @author pengrong
+ *
+ */
+@Service("ehcacheAnnocation")  
 @CacheConfig(cacheNames = "myCache")  
 public class EhcacheAnnocation {  
   

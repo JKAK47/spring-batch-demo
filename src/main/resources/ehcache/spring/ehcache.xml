@@ -5,7 +5,7 @@
          xsi:noNamespaceSchemaLocation="ehcache.xsd"  
          updateCheck="true" monitoring="autodetect" dynamicConfig="true">  
   
-    <diskStore path="java.io.tmpdir"/>  
+    <diskStore path="java.io.tmpdir/ehcache"/>  
   
     <defaultCache  
             maxEntriesLocalHeap="1000"  
@@ -19,7 +19,7 @@
             memoryStoreEvictionPolicy="LRU">  
         <persistence strategy="localTempSwap"/>  
     </defaultCache>  
-  
+  <!-- myCache 缓存 -->
     <cache name="myCache"  
            maxEntriesLocalHeap="1000"  
            maxEntriesLocalDisk="100"  
@@ -31,7 +31,7 @@
            transactionalMode="off">  
         <persistence strategy="localTempSwap"/>  
     </cache>  
-  
+  <!-- test 缓存  -->
     <cache name="test"  
            maxEntriesLocalHeap="1000"  
            maxEntriesLocalDisk="100"  
@@ -44,4 +44,20 @@
         <persistence strategy="localTempSwap"/>  
     </cache>  
   
+	   <!-- helloworld缓存 -->
+	  <cache name="HelloWorldCache"
+	         maxElementsInMemory="1000"
+	         eternal="false"
+	         timeToIdleSeconds="5"
+	         timeToLiveSeconds="5"
+	         overflowToDisk="false"
+	         memoryStoreEvictionPolicy="LRU"/>
+	<!-- UserCache 缓存 -->
+	  <cache name="UserCache"
+	         maxElementsInMemory="1000"
+	         eternal="false"
+	         timeToIdleSeconds="1800"
+	         timeToLiveSeconds="1800"
+	         overflowToDisk="false"
+	         memoryStoreEvictionPolicy="LRU"/>
 </ehcache>  

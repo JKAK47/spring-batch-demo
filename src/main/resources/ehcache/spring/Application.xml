@@ -20,6 +20,8 @@
 	<context:component-scan base-package="org.vincent" />
   	<!-- 配置Spring-ehcache.xml  -->
   	<import resource="Spring-ehcache.xml"/>
+  	  <!-- 启用缓存注解开关 -->  
+  	<cache:annotation-driven />  
 	<!-- 读取配置文件 -->
 	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 
