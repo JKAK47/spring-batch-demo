@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 public class EhcacheServiceImpl implements EhcacheService {
 
 	 /**
-
 	  *  value的值是cache的名称 和 ehcache.xml 中的cache name配置保持一致，key 引用参数值，使用 井号加参数名  
 	  *  @Cacheable 注解标识这个方法是返回值可以 缓存的， 如果以指定的入参计算的key在cache中没找到将执行函数体，若找到则返回cache里面的值不執行函数体。
 	  *  在缓存的有效时间内，以后访问这个方法都直接返回缓存结果，不再执行方法中的代码段。 
@@ -24,7 +23,6 @@ public class EhcacheServiceImpl implements EhcacheService {
     /**
      *  ---------------------------getDataFromDB begin  缓存的key 和删除方法的key 必须一致 ---------------------------------------------
      */
-
     //缓存值到多个cache = HelloWorldCache， UserCache
     @Cacheable(value={"HelloWorldCache","UserCache"}, key="'DataFromDB:' + #key")
     @Override
@@ -32,6 +30,7 @@ public class EhcacheServiceImpl implements EhcacheService {
         System.out.println("从数据库中获取数据，执行方法体...");
         return key + ":" + String.valueOf(Math.round(Math.random()*1000000));
     }
+
 
     /**
      * 用于测试 UserCache cache put的数据
@@ -42,7 +41,6 @@ public class EhcacheServiceImpl implements EhcacheService {
     	 System.out.println("begin get data...");
          return key + ":" + String.valueOf(Math.round(Math.random()*1000000));
 	}
-
     /**
      * @CacheEvict 注解 表明所修饰的方法是用来删除失效或无用的缓存数据。
      * @CacheEvict属性  value：缓存名称，不能为空

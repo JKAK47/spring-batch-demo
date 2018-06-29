@@ -6,6 +6,7 @@
          updateCheck="true" monitoring="autodetect" dynamicConfig="true">  
   
 
+
   	<!-- 设置 ehcache 存储到磁盘的路径
   		c盘跟目录下新建ehcache目录(user.home/../../ehcache)
   		

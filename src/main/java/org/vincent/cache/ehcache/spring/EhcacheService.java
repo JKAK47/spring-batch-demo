@@ -16,8 +16,9 @@ public interface EhcacheService {
 
 	public void removeUser(String userId);
 
-	public void removeAllUser();
 
 	String getData(String key);
+
+	public void removeAllUser();
 
 }
