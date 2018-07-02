@@ -33,11 +33,6 @@ public class User {
 		this.timestmp=Long.toString(System.currentTimeMillis());
 	}
 	public User(){
-		
 	}
-	
-	/*public static void main(String[] args) {
-		System.out.println(System.getProperty("java.io.tmpdir"));
-	}*/
 
 }

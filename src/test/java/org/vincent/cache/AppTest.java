@@ -11,7 +11,6 @@ public class AppTest {
 
 	//volatile 关键字只是代表了每次读取都是当前最新的值。并不能对于JVM中多线程同步有任何帮助
 	 public volatile static int count = 0;
-	 
 	 public static synchronized void inc() {
 	        //这里延迟1毫秒，使得结果明显
 	        try {

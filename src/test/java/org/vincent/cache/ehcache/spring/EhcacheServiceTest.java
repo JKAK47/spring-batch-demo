@@ -44,7 +44,7 @@ public class EhcacheServiceTest extends AbstractJUnit4SpringContextTests {
 	@Test
 	public void testPut() {
 		String key = "mengdee";
-		ehcacheService.refreshData(key); // 模拟从数据库中加载数据
+		System.out.println(ehcacheService.refreshData(key)); // 模拟从数据库中加载数据
 		String data = ehcacheService.getDataFromDB(key);
 		System.out.println("data:" + data); // data:mengdee::527236
 

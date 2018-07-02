@@ -9,9 +9,9 @@ public class EhcacheServiceImpl implements EhcacheService {
 
 	 /**
 	  *  value的值是cache的名称 和 ehcache.xml 中的cache name配置保持一致，key 引用参数值，使用 井号加参数名  
-	  *  @Cacheable 注解标识这个方法是返回值可以 缓存的， 如果以指定的入参计算的key在cache中没找到将执行函数体，若找到则返回cache里面的值不執行函数体。
+	  *  @Cacheable 注解标识这个方法的返回值可以 缓存的， 如果以指定的入参计算的key在cache中没找到将执行函数体，若找到则返回cache里面的值不執行函数体。
 	  *  在缓存的有效时间内，以后访问这个方法都直接返回缓存结果，不再执行方法中的代码段。 
-	  *  这个注解可以用condition属性来设置条件，如果不满足条件，就不使用缓存数据，直接执行方法。 可以使用key属性来指定key的生成规则。
+	  *  这个注解可以用condition属性来设置条件，如果不满足条件，就不使用缓存数据，直接执行方法。 可以使用 key 属性来指定key的生成规则。
 	  *  验证时间到期 
 	  */
     @Cacheable(value="HelloWorldCache", key="'timestamp: ' +#param")
@@ -31,9 +31,8 @@ public class EhcacheServiceImpl implements EhcacheService {
         return key + ":" + String.valueOf(Math.round(Math.random()*1000000));
     }
 
-
     /**
-     * 用于测试 UserCache cache put的数据
+     * 用于测试上面方法getDataFromDBput的值從 UserCache 這個cache裡面是否可以獲取到 cache put的数据
      */
     @Cacheable(value="UserCache",key="'DataFromDB:' + #key")
     @Override
@@ -54,7 +53,8 @@ public class EhcacheServiceImpl implements EhcacheService {
         System.out.println("从数据库中删除数据");
     }
     /**
-     * @CachePut 注解的方法体总是会执行方法体并触发cache put操作缓存数据
+     * @CachePut 注解的方法体总是会执行方法体并触发cache put操作缓存数据.
+     * 这个方法是同一个Key每次返回的都是不同的。
      */
     @CachePut(value="HelloWorldCache", key="'DataFromDB:' + #key")
     @Override

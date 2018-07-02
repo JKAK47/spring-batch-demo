@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 /**
  * ehcache 2.10.x 集成spring 
  * @author pengrong
- *@CacheConfig 是类级别的注解，表示改类下所有方法都是可缓存的。cacheNames是该方法下缓存的默认缓存名字  , keyGenerator 是缓存中默认的key生成逻辑
+ *@CacheConfig 是类级别的注解，表示该类下所有方法都是可缓存的。cacheNames是该方法下结果可缓存的 默认缓存名字  , keyGenerator 是缓存中默认的key生成逻辑
  *@CacheConfig(cacheNames = "myCache")  
  */
 @Service("ehcacheAnnocation")  
