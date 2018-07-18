@@ -172,6 +172,14 @@
 		</dependency>
 		    								  	  
 		<!-- java Cache end -->
+		
+		<!-- eventbus begin -->
+		<dependency>
+			<groupId>org.greenrobot</groupId>
+			<artifactId>eventbus</artifactId>
+			<version>3.1.1</version>
+		</dependency>
+		<!-- eventbus stop -->
     </dependencies>
     <build>
     	<finalName>spring-batch-demo</finalName>
