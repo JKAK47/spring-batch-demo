@@ -16,6 +16,7 @@ public class ABA {
 	            new AtomicStampedReference<Integer>(100, 0);
 	    
 	    public static void main(String[] args) throws InterruptedException {
+	    	System.out.println("");
 	        Thread intT1 = new Thread(new Runnable() {
 	            @Override
 	            public void run() {
@@ -75,5 +76,6 @@ public class ABA {
 	        
 	        refT1.start();
 	        refT2.start();
+	    
 	    }
 }

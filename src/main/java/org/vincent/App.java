@@ -1,8 +1,14 @@
 package org.vincent;
 
+import java.util.Arrays;
+
 public class App {
 
 public static void main(String[] args) {
+	String[] result="(0:100)(1:100)".trim().split("\\)");
+	System.out.println(Arrays.toString(result));
+	result="0000-00-15,0070-00-00".trim().split(",");
+	System.out.println(Arrays.toString(result));
 	Integer integer=null;
 	try {
 		integer=getInteger();
